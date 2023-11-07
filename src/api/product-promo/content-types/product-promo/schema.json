@@ -1,0 +1,61 @@
+{
+  "kind": "collectionType",
+  "collectionName": "product_promos",
+  "info": {
+    "singularName": "product-promo",
+    "pluralName": "product-promos",
+    "displayName": "Product Promo",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "promoName": {
+      "type": "string"
+    },
+    "promoPicture": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "startDate": {
+      "type": "datetime"
+    },
+    "endDate": {
+      "type": "datetime"
+    },
+    "discount": {
+      "type": "decimal"
+    },
+    "totalProduct": {
+      "type": "integer"
+    },
+    "productNames": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::product.product"
+    },
+    "productCategories": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::product-category.product-category"
+    },
+    "descriptions": {
+      "type": "customField",
+      "options": {
+        "preset": "toolbar"
+      },
+      "customField": "plugin::ckeditor5.CKEditor"
+    },
+    "products": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::product-stock.product-stock"
+    }
+  }
+}

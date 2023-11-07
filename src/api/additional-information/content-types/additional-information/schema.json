@@ -1,0 +1,25 @@
+{
+  "kind": "singleType",
+  "collectionName": "additional_informations",
+  "info": {
+    "singularName": "additional-information",
+    "pluralName": "additional-informations",
+    "displayName": "Additional Information",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "brandName": {
+      "type": "string"
+    },
+    "address": {
+      "type": "text"
+    },
+    "phoneNumber": {
+      "type": "string"
+    }
+  }
+}

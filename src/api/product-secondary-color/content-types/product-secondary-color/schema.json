@@ -1,0 +1,20 @@
+{
+  "kind": "collectionType",
+  "collectionName": "product_secondary_colors",
+  "info": {
+    "singularName": "product-secondary-color",
+    "pluralName": "product-secondary-colors",
+    "displayName": "Product Secondary Color"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    }
+  }
+}

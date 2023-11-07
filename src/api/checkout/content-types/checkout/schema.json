@@ -1,0 +1,41 @@
+{
+  "kind": "collectionType",
+  "collectionName": "checkouts",
+  "info": {
+    "singularName": "checkout",
+    "pluralName": "checkouts",
+    "displayName": "Checkout",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "discount": {
+      "type": "integer",
+      "default": 0
+    },
+    "customerName": {
+      "type": "string",
+      "required": true,
+      "minLength": 3,
+      "maxLength": 25
+    },
+    "customerAddress": {
+      "type": "text"
+    },
+    "phoneNumber": {
+      "type": "string",
+      "private": true,
+      "maxLength": 15,
+      "required": true,
+      "minLength": 8
+    },
+    "stockId": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::product-stock.product-stock"
+    }
+  }
+}
