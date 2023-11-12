@@ -1063,6 +1063,7 @@ export interface ApiProductCategoryProductCategory
       'oneToMany',
       'api::product.product'
     >;
+    categoryImage: Attribute.Media;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
