@@ -801,13 +801,19 @@ export interface ApiArticleArticle extends Schema.CollectionType {
           localized: true;
         };
       }>;
+    content: Attribute.RichText &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     article_category: Attribute.Relation<
       'api::article.article',
       'oneToOne',
       'api::article-category.article-category'
     >;
-    content: Attribute.RichText &
-      Attribute.Required &
+    contents: Attribute.RichText &
       Attribute.CustomField<
         'plugin::ckeditor5.CKEditor',
         {
