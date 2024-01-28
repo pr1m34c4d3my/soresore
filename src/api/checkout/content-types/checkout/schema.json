@@ -12,7 +12,7 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "discount": {
+    "totalPrice": {
       "type": "integer",
       "default": 0
     },
@@ -32,10 +32,18 @@
       "required": true,
       "minLength": 8
     },
-    "stockId": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::product-stock.product-stock"
+    "items": {
+      "type": "json"
+    },
+    "isPaid": {
+      "type": "boolean",
+      "default": false
+    },
+    "finalPrice": {
+      "type": "integer"
+    },
+    "priceId": {
+      "type": "integer"
     }
   }
 }

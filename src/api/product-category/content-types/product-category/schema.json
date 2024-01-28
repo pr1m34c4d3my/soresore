@@ -23,11 +23,12 @@
       "target": "api::product.product"
     },
     "categoryImage": {
+      "type": "media",
+      "multiple": true,
+      "required": true,
       "allowedTypes": [
         "images"
-      ],
-      "type": "media",
-      "multiple": true
+      ]
     }
   }
 }

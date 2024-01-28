@@ -36,7 +36,7 @@
     "coverImage": {
       "type": "media",
       "multiple": false,
-      "required": false,
+      "required": true,
       "allowedTypes": [
         "images"
       ],
@@ -46,21 +46,12 @@
         }
       }
     },
-    "content": {
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "type": "richtext",
-      "required": true
-    },
     "article_category": {
       "type": "relation",
       "relation": "oneToOne",
       "target": "api::article-category.article-category"
     },
-    "contents": {
+    "content": {
       "pluginOptions": {
         "i18n": {
           "localized": false
@@ -70,7 +61,8 @@
       "options": {
         "preset": "toolbarBaloon"
       },
-      "customField": "plugin::ckeditor5.CKEditor"
+      "customField": "plugin::ckeditor5.CKEditor",
+      "required": true
     }
   }
 }

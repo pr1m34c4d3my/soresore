@@ -795,12 +795,6 @@ export interface ApiArticleArticle extends Schema.CollectionType {
         };
       }>;
     coverImage: Attribute.Media &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    content: Attribute.RichText &
       Attribute.Required &
       Attribute.SetPluginOptions<{
         i18n: {
@@ -812,7 +806,8 @@ export interface ApiArticleArticle extends Schema.CollectionType {
       'oneToOne',
       'api::article-category.article-category'
     >;
-    contents: Attribute.RichText &
+    content: Attribute.RichText &
+      Attribute.Required &
       Attribute.CustomField<
         'plugin::ckeditor5.CKEditor',
         {
@@ -897,7 +892,7 @@ export interface ApiCheckoutCheckout extends Schema.CollectionType {
     draftAndPublish: true;
   };
   attributes: {
-    discount: Attribute.Integer & Attribute.DefaultTo<0>;
+    totalPrice: Attribute.Integer & Attribute.DefaultTo<0>;
     customerName: Attribute.String &
       Attribute.Required &
       Attribute.SetMinMaxLength<{
@@ -912,11 +907,10 @@ export interface ApiCheckoutCheckout extends Schema.CollectionType {
         minLength: 8;
         maxLength: 15;
       }>;
-    stockId: Attribute.Relation<
-      'api::checkout.checkout',
-      'oneToOne',
-      'api::product-stock.product-stock'
-    >;
+    items: Attribute.JSON;
+    isPaid: Attribute.Boolean & Attribute.DefaultTo<false>;
+    finalPrice: Attribute.Integer;
+    priceId: Attribute.Integer;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1063,7 +1057,7 @@ export interface ApiProductCategoryProductCategory
       'oneToMany',
       'api::product.product'
     >;
-    categoryImage: Attribute.Media;
+    categoryImage: Attribute.Media & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
